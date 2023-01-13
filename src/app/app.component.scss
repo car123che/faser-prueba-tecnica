@@ -18,3 +18,18 @@ h1 {
 tr, td, th{
     border: solid 1px #000;
 }
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.agregar-tarea{
+    border: 1px solid #000;
+    padding-left: 1em;
+    width: 12.5vw;
+}

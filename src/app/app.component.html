@@ -26,4 +26,27 @@
 			</td>
 		</tr>
 	</table>
+
+
+	<h2>Agregar Tarea</h2>
+	<div class="agregar-tarea">
+		<div class="campo">
+			<label for="titulo">Titulo</label>
+			<!-- Guardar valor del input mediante databing con ngModel en la variable titulo-->
+			<input type="text" id="titulo" name="titulo" [(ngModel)]="titulo">
+		</div>
+
+		<div class="campo">
+			<label for="tiempo">Tiempo en minutos</label>
+			<!-- Guardar valor del input mediante databing con ngModel en la variable tiempo-->
+			<input type="number" id="tiempo" name="tiempo" [(ngModel)]="duracion">
+		</div>
+
+		<div class="campo">
+			<!--llamado al a funcion agregarTarea mediante event binding-->
+			<button (click)="agregarTarea()">Agregar Tarea</button>
+		</div>
+
+	</div>
+
 </div>

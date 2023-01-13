@@ -10,6 +10,10 @@ import { Tarea } from './tarea';
 export class AppComponent {
 	tareas: Tarea[];
 
+	titulo: string;
+	duracion: number;
+
+
 	constructor(
         public service: AppService,
 	) { }
@@ -20,5 +24,18 @@ export class AppComponent {
 
 	async obtenerTareas() {
 		this.tareas = await this.service.obtenerTareas();
+	}
+
+	agregarTarea(){
+		//Llamamos al método del servicio que agrega una tarea nueva
+		const salida = this.service.agregarTareas(this.titulo, this.duracion);
+
+		//imprimimos el mensaje 
+		console.log(salida);
+
+		//limpiamos los datos
+		this.titulo = undefined;
+		this.duracion = undefined;
+		
 	}
 }
