@@ -48,6 +48,13 @@ export class AppComponent {
 
 		//imprimimos el mensaje 
 		console.log(salida);
+	}
 
+	ordernarListado(tipo){
+		//Llamamos al método del servicio que elimina una tarea 
+		const salida = this.service.ordenarListaTareas(tipo);
+
+		//imprimimos el mensaje 
+		console.log(salida);
 	}
 }

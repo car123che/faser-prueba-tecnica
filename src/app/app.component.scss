@@ -26,7 +26,12 @@ tr, td, th{
     justify-content: center;
     width: 80%;
     margin-top: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
+}
+
+.campo button{
+    font-size: medium;
+    padding: 0.5em;
 }
 
 .agregar-tarea{
@@ -39,4 +44,13 @@ tr, td, th{
     margin-left: 5px;
     margin-top: 3px;
     margin-bottom: 3px;
+    font-size: medium;
+}
+
+.btn-ordenar{
+    height: 3em;
+    width: 40%;
+    margin-bottom: 1em;
+    display: block;
+    font-size: medium;
 }

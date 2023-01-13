@@ -51,4 +51,28 @@ export class AppService {
             return "Error al eliminar tarea";
         }
     }
+
+    //Creación del método de ordenar listado
+    public ordenarListaTareas(tipo):string{
+        try {
+            if(tipo == 0 ){//ascendente
+                //ordenamos la lista respecto a los minutos
+                const listaOrdenada = this.tareas.sort( function (tareaA, tareaB) {
+                    return tareaA.minutos - tareaB.minutos;
+                });
+                
+                this.tareas = listaOrdenada;
+            }else{ //descendente
+                //ordenamos la lista respecto a los minutos
+                const listaOrdenada = this.tareas.sort( function (tareaA, tareaB) {
+                    return tareaB.minutos - tareaA.minutos;
+                });
+
+                this.tareas = listaOrdenada;
+            }
+        } catch (error) {
+            console.error(error);
+            return "Error al ordenar listado";
+        }
+    }
 }
