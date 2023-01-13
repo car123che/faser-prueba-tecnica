@@ -12,7 +12,8 @@
 		</tr>
 
 		<!--Con un ngFor recorremos el arreglo de tareas, creando una fila por tarea-->
-		<tr *ngFor="let tarea of tareas; let id = index" id="tarea">
+		<!--Con ngClass cambiamos el estado si una tarea se marca o no-->
+		<tr *ngFor="let tarea of tareas; let id = index" id="tarea" [ngClass]="{'marcada': tarea.marcada == true}">
 			<!--Por cada atributo de la clase Tarea, creamos una columna-->
 			<td>
 				{{ tarea.id }}
@@ -26,10 +27,15 @@
 				{{ tarea.minutos }}
 			</td>
 
-			<!--Se agrega opción de eliminar tarea, mediante el llamado de la función eliminarTarea
-			eliminamos mediante el indice en el arreglo de la tarea-->
+			
 			<td>
-				<button class="btn-eliminar" (click)="eliminarTarea(id)">eliminar</button>
+				<!--Se agrega opción de eliminar tarea, mediante el llamado de la función eliminarTarea
+			eliminamos mediante el indice en el arreglo de la tarea-->
+				<button class="btn-eliminar" (click)="eliminarTarea(id)">Eliminar</button>
+
+				<!--Se agrega la opción de marcar tarea, mediante el llamado de la funión
+				marcar tarea mediante el indice en el arreglo de la tarea-->
+				<button class="btn-marcar" (click)="marcarTarea(id)">Marcar Tarea</button>
 			</td>
 		</tr>
 	</table>

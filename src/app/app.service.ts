@@ -75,4 +75,16 @@ export class AppService {
             return "Error al ordenar listado";
         }
     }
+
+    //Creación del método para cambiar el estado de marcado
+    public cambiarEstadoMarcado(id):string{
+        try{
+            //eliminado tarea del arreglo, id es la posicion en el arreglo de la tarea
+            this.tareas[id].marcada = !this.tareas[id].marcada;
+            return "Estado de marcado cambiado exitosamente";
+        }catch(error){
+            console.error(error);
+            return "Error en el cambio de Estado de marcado"
+        }
+    }
 }

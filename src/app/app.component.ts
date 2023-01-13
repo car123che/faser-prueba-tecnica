@@ -57,4 +57,13 @@ export class AppComponent {
 		//imprimimos el mensaje 
 		console.log(salida);
 	}
+
+	marcarTarea(id){
+		//Llamamos al método del servicio que elimina una tarea 
+		const salida = this.service.cambiarEstadoMarcado(id);
+
+		//imprimimos el mensaje 
+		console.log(salida);
+		
+	}
 }
