@@ -27,6 +27,9 @@ export class AppComponent {
 	}
 
 	agregarTarea(){
+		//validamos que no vayan vacios
+		if(this.duracion == undefined) this.duracion = 0;
+		if(this.titulo == undefined) this.titulo = "---";
 		//Llamamos al método del servicio que agrega una tarea nueva
 		const salida = this.service.agregarTareas(this.titulo, this.duracion);
 
@@ -37,5 +40,14 @@ export class AppComponent {
 		this.titulo = undefined;
 		this.duracion = undefined;
 		
+	}
+
+	eliminarTarea(id){
+		//Llamamos al método del servicio que elimina una tarea 
+		const salida = this.service.eliminarTarea(id);
+
+		//imprimimos el mensaje 
+		console.log(salida);
+
 	}
 }

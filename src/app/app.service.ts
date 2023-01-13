@@ -33,9 +33,22 @@ export class AppService {
             return "Tarea agregada con éxito"
         }
         catch(error){
+            console.error(error);
             //retornamos mensaje de error
             return "Error al agregar tarea";
         }
 
+    }
+
+    //Creación del método para eliminar tareas
+    public eliminarTarea(id): string{
+        try{
+            //eliminado tarea del arreglo, id es la posicion en el arreglo de la tarea
+            this.tareas.splice(id,1);
+            return "Tarea eliminada exitosamente";
+        }catch(error){
+            console.error(error);
+            return "Error al eliminar tarea";
+        }
     }
 }

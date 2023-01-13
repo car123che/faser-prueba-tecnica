@@ -8,10 +8,11 @@
 			<th>Id</th>
 			<th>Titulo</th>
 			<th>Tiempo</th>
+			<th>Opciones</th>
 		</tr>
 
 		<!--Con un ngFor recorremos el arreglo de tareas, creando una fila por tarea-->
-		<tr *ngFor="let tarea of tareas" id="tarea">
+		<tr *ngFor="let tarea of tareas; let id = index" id="tarea">
 			<!--Por cada atributo de la clase Tarea, creamos una columna-->
 			<td>
 				{{ tarea.id }}
@@ -23,6 +24,12 @@
 
 			<td>
 				{{ tarea.minutos }}
+			</td>
+
+			<!--Se agrega opción de eliminar tarea, mediante el llamado de la función eliminarTarea
+			eliminamos mediante el indice en el arreglo de la tarea-->
+			<td>
+				<button class="btn-eliminar" (click)="eliminarTarea(id)">eliminar</button>
 			</td>
 		</tr>
 	</table>

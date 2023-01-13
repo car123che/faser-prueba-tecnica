@@ -17,6 +17,7 @@ h1 {
 
 tr, td, th{
     border: solid 1px #000;
+    padding: 0.5em;
 }
 
 .campo{
@@ -32,4 +33,10 @@ tr, td, th{
     border: 1px solid #000;
     padding-left: 1em;
     width: 12.5vw;
+}
+
+.btn-eliminar{
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
