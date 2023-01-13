@@ -1,7 +1,29 @@
 <div class="container">
 	<h1>Prueba técnica - Estudio Faser</h1>
-	<h2>Listado de tareas</h2>
-	<ol>
-		<li *ngFor="let tarea of tareas">{{tarea.titulo}} ({{tarea.minutos}} minutos)</li>
-	</ol>
+	<h2>Tabla de tareas</h2>
+
+	<table id="tabla-tareas" class="tabla-tareas">
+		<!--Encabezado de la tabla-->
+		<tr class="encabezado">
+			<th>Id</th>
+			<th>Titulo</th>
+			<th>Tiempo</th>
+		</tr>
+
+		<!--Con un ngFor recorremos el arreglo de tareas, creando una fila por tarea-->
+		<tr *ngFor="let tarea of tareas" id="tarea">
+			<!--Por cada atributo de la clase Tarea, creamos una columna-->
+			<td>
+				{{ tarea.id }}
+			</td>
+
+			<td>
+				{{ tarea.titulo }}
+			</td>
+
+			<td>
+				{{ tarea.minutos }}
+			</td>
+		</tr>
+	</table>
 </div>
